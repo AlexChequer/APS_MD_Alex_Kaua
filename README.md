@@ -1,5 +1,7 @@
 # APS de Matemática Discreta - Modelando um Mundo com Lógica de Primeira Ordem
 
+## Feito por Alex Chequer & Kauã Makiyama
+
 ### 1. Cenário: “Batman: O Cavaleiro das Trevas”
 
 #### Escolhemos o universo do filme *The Dark Knight* (2008). Nele temos:
