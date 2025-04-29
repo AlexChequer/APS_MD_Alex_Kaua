@@ -6,6 +6,8 @@
 
 #### Escolhemos o universo do filme *The Dark Knight* (2008). Nele temos:
 
+Gotham é uma cidade dominada pelo crime, e Bruce Wayne, como Batman, luta para trazer justiça. Ao lado do comissário James Gordon e do promotor Harvey Dent, ele tenta restaurar a esperança da população. Porém, o Coringa aparece para desafiar a ordem e mostrar que a cidade pode facilmente desmoronar no caos. Harvey, antes símbolo de justiça, se transforma no Duas-Caras. Agora, Batman precisa enfrentar o Coringa e seu antigo aliado, enquanto usa a Batcaverna como seu refúgio para proteger Gotham da destruição.
+
 - **Personagens principais:**
   - Bruce Wayne (Batman)
   - James Gordon
