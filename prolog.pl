@@ -8,42 +8,43 @@ vilao(coringa).
 cidade(gotham).
 local(batcaverna).
 
-% Fatos sobre relacionamentos
+% Relacionamentos unidirecionais
 baseDe(batman, batcaverna).
 protege(batman, gotham).
 protege(gordon, gotham).
 protege(dent, gotham).
 ataca(coringa, gotham).
 
-% Regras
-% Regra 1: Todo herói tem pelo menos uma base
+% Regras unidirecionais
 temBase(X) :- heroi(X), baseDe(X, _).
-
-% Regra 2: Todo vilão ataca pelo menos uma cidade
 atacaCidade(X) :- vilao(X), ataca(X, _).
-
-% Regra 3: Se alguém é herói e y é uma cidade, então esse herói protege essa cidade
 protegeCidade(X, Y) :- heroi(X), cidade(Y), protege(X, Y).
-
-% Regra 4: Se alguém é vilão e y é uma cidade, então esse vilão ataca essa cidade
 atacaCidade(X, Y) :- vilao(X), cidade(Y), ataca(X, Y).
 
-% Regra 5: Ser aliado é mútuo
-aliado(X, Y) :- aliado(Y, X).
+% Relações simétricas
 
-% Regra 6: Dois agentes se enfrentam exatamente quando cada um é inimigo do outro
-enfrenta(X, Y) :- inimigo(X, Y), inimigo(Y, X).
+% --- Aliado ---
+aliadoDe(batman, gordon).
+aliadoDe(batman, dent).
+aliadoDe(gordon, dent).
 
-% Regra 7: Se x protege um lugar y e z ataca esse lugar, então x enfrenta z
-enfrenta(X, Z) :- protege(X, Y), ataca(Z, Y).
+aliado(X, Y) :- aliadoDe(X, Y).
+aliado(X, Y) :- aliadoDe(Y, X).
 
-% Regra 8: Se x é inimigo de y, então x é um vilão e y é um herói
-inimigo(X, Y) :- vilao(X), heroi(Y).
+% --- Inimigo ---
+% Fatos-base de inimigo
+inimigoDe(coringa, batman).
+inimigoDe(coringa, gordon).
+inimigoDe(coringa, dent).
 
-% Fatos adicionais sobre relacionamentos
-inimigo(coringa, batman).
-inimigo(coringa, gordon).
-inimigo(coringa, dent).
-aliado(batman, gordon).
-aliado(batman, dent).
-aliado(gordon, dent).
+% Fechamento simétrico
+inimigo(X, Y) :- inimigoDe(X, Y).
+inimigo(X, Y) :- inimigoDe(Y, X).
+
+% --- Enfrenta ---
+% Definição-base de "enfrenta"
+enfrenta_base(X, Y) :- inimigo(X, Y), inimigo(Y, X).
+
+% Fechamento simétrico
+enfrenta(X, Y) :- enfrenta_base(X, Y).
+enfrenta(X, Y) :- enfrenta_base(Y, X).
