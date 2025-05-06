@@ -2,6 +2,8 @@
 
 ## Feito por Alex Chequer & Kauã Makiyama
 
+## Link para video do prolog: https://youtu.be/rN3_LH-90r8
+
 ### 1. Cenário: “Batman: O Cavaleiro das Trevas”
 
 #### Escolhemos o universo do filme *The Dark Knight* (2008). Nele temos:
